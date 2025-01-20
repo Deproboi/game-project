@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bywf2acotio08"]
+
+[ext_resource type="Texture2D" uid="uid://d3356h8kca1kv" path="res://Dialogues/dialogue_box.png" id="1_0jrdf"]
+[ext_resource type="Script" path="res://Dialogues/DialoguePlayer.cs" id="1_ugrl8"]
+
+[node name="Dialogue" type="CanvasLayer"]
+script = ExtResource("1_ugrl8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = 154.0
+offset_top = 463.0
+offset_right = 1042.0
+offset_bottom = 614.0
+texture = ExtResource("1_0jrdf")
+region_rect = Rect2(1.68479, 2.80215, 28.6302, 26.1936)
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 148.0
+offset_bottom = 58.0
+scale = Vector2(2, 2)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Name
+"
+tab_size = 11
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+offset_left = 92.0
+offset_top = 62.0
+offset_right = 233.0
+offset_bottom = 108.0
+scale = Vector2(2, 2)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Texting....
+"

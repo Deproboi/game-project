@@ -8,6 +8,9 @@ public partial class CharacterBody2d : CharacterBody2D
 	private Timer _DashTimer;
 	private Timer _DashAgain;
 	private Timer _WallJumpDur;
+	private Timer _WallJumpTimer;
+	
+	private AnimatedSprite2D PlayerAnim;
 
 	public override void _Ready()
 	{
@@ -15,6 +18,9 @@ public partial class CharacterBody2d : CharacterBody2D
 		_DashTimer = GetNode<Timer>("Dash_timer");
 		_DashAgain = GetNode<Timer>("Dash_Again");
 		_WallJumpDur = GetNode<Timer>("Wall_Jump_Dur");
+		_WallJumpTimer = GetNode<Timer>("Wall_Jump_Timer");
+		
+		PlayerAnim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		
 	}
 
@@ -31,13 +37,20 @@ public partial class CharacterBody2d : CharacterBody2D
 		
 		//BASIC LEFT RIGHT MOVEMENT
 		
+		
 		if (Input.IsPhysicalKeyPressed(Key.A)){
 			this.Position += new Vector2(-AMOUNT,0);
+			PlayerAnim.Scale = new Vector2(-1,1);
+			PlayerAnim.Play("Running");
 			last = -1;
-		}
-		if (Input.IsPhysicalKeyPressed(Key.D)){
+		}else if (Input.IsPhysicalKeyPressed(Key.D)){
 			this.Position += new Vector2(AMOUNT, 0);
+			PlayerAnim.Scale = new Vector2(1,1);
+			PlayerAnim.Play("Running");
 			last = 1;
+		}else{
+			PlayerAnim.Scale = new Vector2(last, 1);
+			PlayerAnim.Play("Idle");
 		}
 	
 		//DASH MOVEMENT
@@ -80,6 +93,7 @@ public partial class CharacterBody2d : CharacterBody2D
 	
 	private const int WallJumpPush = 15;
 	private bool CanWallJump = true;
+	private bool AfterCanWallJump = false;
 	private bool WallJumping = false;
 	private int WallDir = -5;
 	private bool IsWallSlide = false;
@@ -102,19 +116,20 @@ public partial class CharacterBody2d : CharacterBody2D
 			_velocity.Y = JumpForce / 4;
 		}
 
-
 		if((Input.IsPhysicalKeyPressed(Key.W) || Input.IsPhysicalKeyPressed(Key.Space))){
 			if (IsOnFloor()){
 				_velocity.Y = JumpForce;
+				AfterCanWallJump = false;
+				_WallJumpTimer.Start();
 			
-			} if(IsOnWall() && Input.IsPhysicalKeyPressed(Key.D) && WallJumping == false && CanWallJump == true){
+			}else if(IsOnWall() && AfterCanWallJump == true && Input.IsPhysicalKeyPressed(Key.D) && WallJumping == false && CanWallJump == true){
 				WallDir = -1;
 				WallJumping = true;
 				CanWallJump = false;
 				_velocity.Y = JumpForce;
 				_WallJumpDur.Start();
 			
-			} if(IsOnWall() && Input.IsPhysicalKeyPressed(Key.A) && WallJumping == false && CanWallJump == true){
+			}else if(IsOnWall() && AfterCanWallJump == true && Input.IsPhysicalKeyPressed(Key.A) && WallJumping == false && CanWallJump == true){
 				WallDir = 1;
 				WallJumping = true;
 				CanWallJump = false;
@@ -157,6 +172,10 @@ public partial class CharacterBody2d : CharacterBody2D
 	
 	private void OnWallTimeout(){
 		WallJumping = false;
+	}
+	
+	private void OnWallJumpTimeout(){
+		AfterCanWallJump = true;
 	}
 	
 

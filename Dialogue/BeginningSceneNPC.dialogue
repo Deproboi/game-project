@@ -1,0 +1,14 @@
+~ Father_Guardian
+Father: Your back!
+Father: How'd it go?
+- Good
+	Father: That's great!
+	Father: Why don’t you go rest for a bit, imma head out for a second.
+	Father: And DO NOT go looking for me, understood? 
+	=> END
+- Bad
+	Father: It’s ok, you can always try next time.
+	Father: Why don’t you go practice the sword for a bit, imma head out for a second.
+	Father: And DO NOT go looking for me, understood? 
+	=> END
+=> END

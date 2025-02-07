@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://by2jb36wuamm8"]
+
+[ext_resource type="Script" path="res://Dialogue/CanDialogue.cs" id="1_r3fm6"]
+
+[node name="Dialogue" type="Area2D"]
+script = ExtResource("1_r3fm6")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

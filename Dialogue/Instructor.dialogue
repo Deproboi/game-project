@@ -1,0 +1,27 @@
+~ InstructorOne
+set GlobalScript.CurrentDialogue = true
+Instructor: Ah! Hello, you must be Player_Name.
+Instructor: Player_Name. Continue forward and I’ll teach you some skills.
+set GlobalScript.CurrentDialogue = false
+=> END
+
+~ InstructorTwo
+Instructor: Use arrow keys to attack that wolf over there.
+Instructor: Try to kill that wolf, I won't help you unless you're about to die.
+=> END
+
+~ InstructorThree
+Instructor: Don't die here!
+Instructor: Don't say I didn't warn you
+=> END
+
+~ InstructorFour
+Instructor: Each weapon has a special skill
+Instructor: To use it, press Special_Key
+Instructor: Try it against those spiders
+=> END
+
+~ InstructorFive
+Instructor: Congrats! You've finished the tutorial.
+Instructor: I hope you'll survive to reach the top.
+=> END

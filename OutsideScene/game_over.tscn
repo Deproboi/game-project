@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx5rqgqn2hh2s"]
+
+[ext_resource type="Script" path="res://OutsideScene/GameOver.cs" id="1_wyb3w"]
+
+[node name="Game_Over" type="CanvasLayer"]
+script = ExtResource("1_wyb3w")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 533.0
+offset_top = 240.0
+offset_right = -550.0
+offset_bottom = -385.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died"
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 481.0
+offset_top = 320.0
+offset_right = -485.0
+offset_bottom = -305.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Space to Continue
+"

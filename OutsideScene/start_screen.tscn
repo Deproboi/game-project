@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://pqrxdiqff6f2"]
+
+[ext_resource type="Script" path="res://OutsideScene/StartScreen.cs" id="1_65adc"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_hgyer"]
+script/source = "using Godot;
+using System;
+
+public partial class Quit : Button
+{
+
+	public override void _Ready()
+	{
+	}
+
+
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[node name="StartScreen" type="CanvasLayer"]
+script = ExtResource("1_65adc")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 541.0
+offset_top = 221.0
+offset_right = -532.0
+offset_bottom = -404.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The Game"
+
+[node name="Play" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 559.0
+offset_top = 270.0
+offset_right = -552.0
+offset_bottom = -347.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 547.0
+offset_top = 337.0
+offset_right = -535.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings
+"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 559.0
+offset_top = 406.0
+offset_right = -551.0
+offset_bottom = -211.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game
+"
+script = SubResource("CSharpScript_hgyer")
+
+[connection signal="pressed" from="Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="Settings" to="." method="OnSettingsPressed"]
+[connection signal="pressed" from="Quit" to="." method="OnQuitPressed"]

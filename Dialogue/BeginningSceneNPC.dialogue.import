@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dijb50s18ye2d"
+path="res://.godot/imported/BeginningSceneNPC.dialogue-1cbd1efa74beab41b2a17c7ffd4f2ee8.tres"
+
+[deps]
+
+source_file="res://Dialogue/BeginningSceneNPC.dialogue"
+dest_files=["res://.godot/imported/BeginningSceneNPC.dialogue-1cbd1efa74beab41b2a17c7ffd4f2ee8.tres"]
+
+[params]
+
+defaults=true

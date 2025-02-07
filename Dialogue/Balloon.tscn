@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://co5qmjq7noigu"]
+[gd_scene load_steps=9 format=3 uid="uid://c61ud4kxvgafq"]
 
 [ext_resource type="Script" path="res://Dialogue/DialogueBalloon.cs" id="1_36de5"]
-[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -84,10 +84,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = -183.0
-offset_right = -19.0
-offset_bottom = -19.0
+offset_left = 11.0
+offset_top = -635.0
+offset_right = -29.0
+offset_bottom = -471.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
@@ -126,10 +126,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -558.0
-offset_right = 494.0
-offset_bottom = -154.0
+offset_left = -87.0
+offset_top = -844.0
+offset_right = 554.0
+offset_bottom = -440.0
 grow_horizontal = 2
 grow_vertical = 0
 

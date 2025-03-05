@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using System.ComponentModel.DataAnnotations;
-using DialogueManagerRuntime;
 
 
 public partial class Player : CharacterBody2D
@@ -30,9 +29,15 @@ public partial class Player : CharacterBody2D
 		WallRay = GetNode<RayCast2D>("WallRay");
 		player = GetNode<CharacterBody2D>("Player");
 		
-		DialogueManager.Connect("on_dialogue_started", this, nameof(OnDialogueStarted));
-		DialogueManager.Connect("on_dialogue_ended", this, nameof(OnDialogueEnded));
+
 		
+	}
+	
+	public override void _UnhandledInput(InputEvent @event){
+		//settings
+		if (Input.IsActionJustReleased("Back")){
+			GetTree().ChangeSceneToFile("res://OutsideScene/settings.tscn");
+		}
 	}
 
 	//DASH MOVEMENT VARIABLES
@@ -42,25 +47,21 @@ public partial class Player : CharacterBody2D
 	private bool can_dash = true;
 	
 	private bool IsJumping = false;
-	
-	private bool IsDialogueActive = false;
 
 	public override void _PhysicsProcess(double delta)
 	{
 		
-		if (IsDialogueActive) // Don't move if dialogue is active
+		if (Dialogue.IsDialogueActive) // Don't move if dialogue is active
 		{
+			if (Input.IsActionJustReleased("Continue") && Dialogue.IsDialogueActive){
+				Dialogue.OnNextDown();
+			}
 			return;
 		}
 		
 		
 		GlobalScript.NewPlayerPosition(Position);
 		
-		
-		//settings
-		if (Input.IsActionJustReleased("Back")){
-			GetTree().ChangeSceneToFile("res://OutsideScene/settings.tscn");
-		}
 
 		int AMOUNT = 10;
 		
@@ -121,14 +122,6 @@ public partial class Player : CharacterBody2D
 	}
 	
 	
-	private void OnDialogueStarted(){
-		IsDialogueActive = true;
-	}
-	
-	
-	private void OnDialogueEnded(){
-		IsDialogueActive = false;
-	}
 	
 	
 	

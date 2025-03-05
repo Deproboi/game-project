@@ -1,0 +1,16 @@
+{
+	"npc1": {
+		"name": "Instructor",
+		"dialogue1": [
+			"Ah! Hello, you must be {Player_Name}.",
+			"{Player_Name}. Continue forward and I’ll teach you some skills."
+			]
+		},
+	"npc2": {
+		"name": "Instructor",
+		"dialogue1": [
+			"There's a wolf ahead, try killing it.",
+			"Use arrow keys to attack."
+			]
+		}
+}

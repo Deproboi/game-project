@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=10 format=4 uid="uid://cv2gponsre1xf"]
 
 [ext_resource type="PackedScene" uid="uid://bbl42vcgo2864" path="res://InsideScene/MainCharacter.tscn" id="1_w1jpi"]
@@ -6,6 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://nt87da0rqily" path="res://Pictures/SwordSlashTest.png" id="4_d8n6g"]
 [ext_resource type="Script" path="res://Dialogue/CanDialogue.cs" id="5_lmiys"]
 [ext_resource type="Resource" uid="uid://dijb50s18ye2d" path="res://Dialogue/BeginningSceneNPC.dialogue" id="6_rmx3n"]
+=======
+[gd_scene load_steps=10 format=4 uid="uid://drfeiu1vcd3db"]
+
+[ext_resource type="PackedScene" uid="uid://cd08pj03r2m2y" path="res://InsideScene/MainCharacter.tscn" id="1_w1jpi"]
+[ext_resource type="Texture2D" path="res://Pictures/icon.svg" id="2_sre3r"]
+[ext_resource type="Texture2D" path="res://Pictures/ForestBackground1.png" id="3_nsv7r"]
+[ext_resource type="Texture2D" path="res://Pictures/SwordSlashTest.png" id="4_d8n6g"]
+[ext_resource type="Script" path="res://Dialogue/CanDialogue.cs" id="5_lmiys"]
+[ext_resource type="Resource" path="res://Dialogue/BeginningSceneNPC.dialogue" id="6_rmx3n"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ty7kn"]
 texture = ExtResource("2_sre3r")

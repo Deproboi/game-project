@@ -6,7 +6,6 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="new.fs" />
-    <Compile Include="Attackable.fs" />
+   
   </ItemGroup>
 </Project>

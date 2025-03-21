@@ -56,12 +56,12 @@ public partial class Enemy : CharacterBody2D
 		
 	}
 
-	private void withinAtkRange(CharacterBody2d body){
+	private void withinAtkRange(){
 		isChasing = false;
 		_atkTimer.Start();
 	}
 
-	private void atkFinished(CharacterBody2d body){
+	private void atkFinished(){
 		isChasing = true;
 		_atkTimer.Stop();
 		
@@ -69,11 +69,16 @@ public partial class Enemy : CharacterBody2D
 
 	private void OnAtkTimeout(){
 		can_Attack = true;
+		attack();
 	}
 
 	private void attack(){
-		//MERGE WITH GLOBAL VAR FILE
-		//playerHp -= dmg;
+		GlobalScript.PlayerHp -= dmg;
+	}
+
+	private void attackReceived(int dmg){
+		hp -= dmg;
+
 	}
   
   }

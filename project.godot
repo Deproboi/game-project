@@ -10,26 +10,37 @@ config_version=5
 
 [application]
 
+<<<<<<< Updated upstream
 config/name="Trial"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
+=======
+config/name="Project: glorp"
+run/main_scene="res://InsideScene/main.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+>>>>>>> Stashed changes
 config/icon="res://icon.svg"
 
-[autoload]
+[debug]
 
+<<<<<<< Updated upstream
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
 general/balloon_path="res://Dialogue/Balloon.tscn"
 general/uses_dotnet=true
+=======
+gdscript/warnings/exclude_addons=false
+>>>>>>> Stashed changes
 
 [dotnet]
 
-project/assembly_name="Trial"
+project/assembly_name="Project- glorp"
 
-[editor_plugins]
+[editor]
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 =======
@@ -69,3 +80,7 @@ dash={
 [rendering]
 
 renderer/rendering_method="mobile"
+=======
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+>>>>>>> Stashed changes

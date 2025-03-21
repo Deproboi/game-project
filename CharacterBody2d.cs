@@ -14,6 +14,11 @@ public partial class CharacterBody2d : CharacterBody2D
 
 	public override void _Ready()
 	{
+<<<<<<< Updated upstream:CharacterBody2d.cs
+=======
+		GD.Print("test");
+		Position = GlobalScript.PlayerPosition;
+>>>>>>> Stashed changes:InsideScene/Player.cs
 		
 		_DashTimer = GetNode<Timer>("Dash_timer");
 		_DashAgain = GetNode<Timer>("Dash_Again");
@@ -21,6 +26,13 @@ public partial class CharacterBody2d : CharacterBody2D
 		_WallJumpTimer = GetNode<Timer>("Wall_Jump_Timer");
 		
 		PlayerAnim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+<<<<<<< Updated upstream:CharacterBody2d.cs
+=======
+		WallRay = GetNode<RayCast2D>("WallRay");
+		player = GetNode<CharacterBody2D>("Player");
+		
+		
+>>>>>>> Stashed changes:InsideScene/Player.cs
 		
 	}
 

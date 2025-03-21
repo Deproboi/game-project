@@ -1,2 +1,0 @@
-"Ah! Hello, you must be Player_Name.",
-"Player_Name. Continue forward and I’ll teach you some skills."	

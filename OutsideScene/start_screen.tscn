@@ -27,10 +27,10 @@ script = ExtResource("1_65adc")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 541.0
-offset_top = 221.0
-offset_right = -532.0
-offset_bottom = -404.0
+offset_left = 535.5
+offset_top = 167.0
+offset_right = -537.5
+offset_bottom = -458.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "The Game"
@@ -39,10 +39,10 @@ text = "The Game"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 559.0
-offset_top = 270.0
-offset_right = -552.0
-offset_bottom = -347.0
+offset_left = 553.5
+offset_top = 216.0
+offset_right = -557.5
+offset_bottom = -401.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
@@ -51,10 +51,10 @@ text = "Play"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 547.0
-offset_top = 337.0
-offset_right = -535.0
-offset_bottom = -280.0
+offset_left = 541.5
+offset_top = 283.0
+offset_right = -540.5
+offset_bottom = -334.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Settings
@@ -64,16 +64,25 @@ text = "Settings
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 559.0
-offset_top = 406.0
-offset_right = -551.0
-offset_bottom = -211.0
+offset_left = 539.0
+offset_top = 405.0
+offset_right = -526.0
+offset_bottom = -212.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Exit Game
 "
 script = SubResource("CSharpScript_hgyer")
 
+[node name="Change Scene" type="Button" parent="."]
+offset_left = 525.0
+offset_top = 341.0
+offset_right = 641.0
+offset_bottom = 372.0
+text = "Change Scene
+"
+
 [connection signal="pressed" from="Play" to="." method="OnPlayPressed"]
 [connection signal="pressed" from="Settings" to="." method="OnSettingsPressed"]
 [connection signal="pressed" from="Quit" to="." method="OnQuitPressed"]
+[connection signal="button_down" from="Change Scene" to="." method="_on_change_scene_button_down"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cd08pj03r2m2y"]
+[gd_scene load_steps=33 format=3 uid="uid://cd08pj03r2m2y"]
 
 [ext_resource type="Script" path="res://InsideScene/Player.cs" id="1_tu3jo"]
 [ext_resource type="Texture2D" uid="uid://dy27kgtu2o207" path="res://Pictures/idle.png" id="2_esmyj"]
 [ext_resource type="Texture2D" uid="uid://cru7cc8vcsotv" path="res://Pictures/JumpingTest.png" id="3_yw3di"]
 [ext_resource type="Texture2D" uid="uid://ckdn3wpl8ugnq" path="res://Pictures/RunSprite.png" id="4_3g5il"]
+[ext_resource type="Texture2D" uid="uid://dbuiwmenbp1x4" path="res://Pictures/wallslide.webp" id="5_sixnf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twidv"]
 atlas = ExtResource("2_esmyj")
@@ -89,6 +90,22 @@ region = Rect2(132, 0, 66, 64)
 atlas = ExtResource("4_3g5il")
 region = Rect2(198, 0, 66, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_klrvr"]
+atlas = ExtResource("5_sixnf")
+region = Rect2(0, 0, 39, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e40it"]
+atlas = ExtResource("5_sixnf")
+region = Rect2(39, 0, 39, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cd6v"]
+atlas = ExtResource("5_sixnf")
+region = Rect2(78, 0, 39, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioio3"]
+atlas = ExtResource("5_sixnf")
+region = Rect2(117, 0, 39, 74)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_j1pi4"]
 animations = [{
 "frames": [{
@@ -168,10 +185,27 @@ animations = [{
 "loop": true,
 "name": &"Running",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klrvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e40it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cd6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioio3")
+}],
+"loop": true,
+"name": &"WallSlide",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rc8df"]
-size = Vector2(71, 75.25)
+size = Vector2(73, 75.25)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(454, 278)
@@ -180,11 +214,11 @@ script = ExtResource("1_tu3jo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_j1pi4")
-animation = &"Running"
+animation = &"Idle"
 speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 2.625)
+position = Vector2(2.5, 2.625)
 shape = SubResource("RectangleShape2D_rc8df")
 
 [node name="Dash_timer" type="Timer" parent="."]

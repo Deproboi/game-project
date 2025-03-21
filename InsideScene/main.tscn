@@ -1,16 +1,20 @@
-[gd_scene load_steps=16 format=4 uid="uid://sqieq0da8qc8"]
+[gd_scene load_steps=24 format=4 uid="uid://sqieq0da8qc8"]
 
 [ext_resource type="PackedScene" uid="uid://cd08pj03r2m2y" path="res://InsideScene/MainCharacter.tscn" id="1_wt035"]
 [ext_resource type="Texture2D" uid="uid://blpo36ws84q5i" path="res://Pictures/icon.svg" id="2_htrys"]
 [ext_resource type="Texture2D" uid="uid://c1wxdji6ffoin" path="res://Pictures/ForestBackground1.png" id="3_wn0jy"]
 [ext_resource type="Texture2D" uid="uid://dhi2a3wml67x6" path="res://Pictures/Screenshot 2025-01-21 1.54.51 PM.png" id="4_548as"]
-[ext_resource type="PackedScene" path="res://OutsideScene/death_zone.tscn" id="5_rhap8"]
-[ext_resource type="PackedScene" path="res://OutsideScene/change_scene.tscn" id="6_ox0pv"]
+[ext_resource type="PackedScene" uid="uid://gtaf4fnr4c3h" path="res://OutsideScene/death_zone.tscn" id="5_rhap8"]
+[ext_resource type="PackedScene" uid="uid://c4jcvy6ydc74v" path="res://OutsideScene/change_scene.tscn" id="6_ox0pv"]
 [ext_resource type="PackedScene" uid="uid://by2jb36wuamm8" path="res://Dialogue/Dialogue.tscn" id="7_mjd62"]
 [ext_resource type="PackedScene" uid="uid://cvg8sbgl4slls" path="res://InsideScene/interact.tscn" id="7_op7j2"]
 [ext_resource type="Script" path="res://Dialogue/DialogueIndex1.cs" id="9_6f3ni"]
+[ext_resource type="Script" path="res://Dialogue/DialogueIndex2.cs" id="10_lc2fq"]
+[ext_resource type="Script" path="res://Dialogue/DialogueIndex3.cs" id="11_72ywu"]
+[ext_resource type="Script" path="res://Dialogue/DialogueIndex4.cs" id="12_xa0c6"]
+[ext_resource type="Script" path="res://Dialogue/DialogueIndex5.cs" id="13_gkhbp"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tv3v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2s7v"]
 texture = ExtResource("2_htrys")
 0:0/0 = 0
 1:0/0 = 0
@@ -115,7 +119,7 @@ texture = ExtResource("2_htrys")
 
 [sub_resource type="TileSet" id="TileSet_an8wd"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8tv3v")
+sources/0 = SubResource("TileSetAtlasSource_b2s7v")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhleu"]
 size = Vector2(402.502, 125)
@@ -128,6 +132,18 @@ size = Vector2(130.065, 127.037)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8enup"]
 size = Vector2(127.677, 131.263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5v0n"]
+size = Vector2(130.065, 123.188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0efwd"]
+size = Vector2(130.002, 125.539)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mu48"]
+size = Vector2(132.789, 123.826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcdlb"]
+size = Vector2(133.333, 127.809)
 
 [node name="World" type="Node"]
 
@@ -280,6 +296,8 @@ shape = SubResource("RectangleShape2D_h01dg")
 
 [node name="Instructor" type="Node" parent="."]
 
+[node name="Dialogue" parent="Instructor" instance=ExtResource("7_mjd62")]
+
 [node name="FirstOne" type="Sprite2D" parent="Instructor"]
 z_index = 2
 position = Vector2(610, 572.25)
@@ -300,14 +318,11 @@ offset_bottom = -96.3683
 scale = Vector2(2, 2)
 text = "Press F to Talk"
 
-[node name="Dialogue" parent="Instructor/FirstOne" instance=ExtResource("7_mjd62")]
-
 [node name="DialogueIndex1" type="Area2D" parent="Instructor/FirstOne"]
 z_index = 5
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("9_6f3ni")
-hello = "npc1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/FirstOne/DialogueIndex1"]
 z_index = 5
@@ -334,7 +349,12 @@ offset_bottom = -96.3683
 scale = Vector2(2, 2)
 text = "Press F to Talk"
 
-[node name="Dialogue" parent="Instructor" instance=ExtResource("7_mjd62")]
+[node name="DialogueIndex2" type="Area2D" parent="Instructor/SecondOne"]
+script = ExtResource("10_lc2fq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/SecondOne/DialogueIndex2"]
+position = Vector2(-1.03223, 0.00012207)
+shape = SubResource("RectangleShape2D_w5v0n")
 
 [node name="ThirdOne" type="Sprite2D" parent="Instructor"]
 z_index = 4
@@ -342,11 +362,53 @@ position = Vector2(5379, 127)
 scale = Vector2(0.49231, 0.517769)
 texture = ExtResource("2_htrys")
 
+[node name="Interact" parent="Instructor/ThirdOne" instance=ExtResource("7_op7j2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/ThirdOne/Interact"]
+position = Vector2(-1.03271, 1.4436)
+shape = SubResource("RectangleShape2D_gs11t")
+
+[node name="InteractText" type="Label" parent="Instructor/ThirdOne/Interact"]
+offset_left = -99.0968
+offset_top = -131.368
+offset_right = 11.9032
+offset_bottom = -96.3683
+scale = Vector2(2, 2)
+text = "Press F to Talk"
+
+[node name="DialogueIndex3" type="Area2D" parent="Instructor/ThirdOne"]
+script = ExtResource("11_72ywu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/ThirdOne/DialogueIndex3"]
+position = Vector2(-2.03027, 0.965683)
+shape = SubResource("RectangleShape2D_0efwd")
+
 [node name="FourthOne" type="Sprite2D" parent="Instructor"]
 z_index = 4
 position = Vector2(7128, 1857)
 scale = Vector2(0.519623, 0.516855)
 texture = ExtResource("2_htrys")
+
+[node name="Interact" parent="Instructor/FourthOne" instance=ExtResource("7_op7j2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/FourthOne/Interact"]
+position = Vector2(-1.03271, 1.4436)
+shape = SubResource("RectangleShape2D_gs11t")
+
+[node name="InteractText" type="Label" parent="Instructor/FourthOne/Interact"]
+offset_left = -99.0968
+offset_top = -131.368
+offset_right = 11.9032
+offset_bottom = -96.3683
+scale = Vector2(2, 2)
+text = "Press F to Talk"
+
+[node name="DialogueIndex4" type="Area2D" parent="Instructor/FourthOne"]
+script = ExtResource("12_xa0c6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/FourthOne/DialogueIndex4"]
+position = Vector2(-2.88672, -3.86963)
+shape = SubResource("RectangleShape2D_5mu48")
 
 [node name="FiftheOne" type="Sprite2D" parent="Instructor"]
 z_index = 4
@@ -354,4 +416,40 @@ position = Vector2(9176, 543)
 scale = Vector2(0.510006, 0.50857)
 texture = ExtResource("2_htrys")
 
+[node name="Interact" parent="Instructor/FiftheOne" instance=ExtResource("7_op7j2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/FiftheOne/Interact"]
+position = Vector2(-1.03271, 1.4436)
+shape = SubResource("RectangleShape2D_gs11t")
+
+[node name="InteractText" type="Label" parent="Instructor/FiftheOne/Interact"]
+offset_left = -99.0968
+offset_top = -131.368
+offset_right = 11.9032
+offset_bottom = -96.3683
+scale = Vector2(2, 2)
+text = "Press F to Talk"
+
+[node name="DialogueIndex5" type="Area2D" parent="Instructor/FiftheOne"]
+script = ExtResource("13_gkhbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructor/FiftheOne/DialogueIndex5"]
+position = Vector2(-1.96094, -0.983154)
+shape = SubResource("RectangleShape2D_jcdlb")
+
+[node name="Label" type="Label" parent="."]
+z_index = 3
+texture_filter = 1
+offset_left = 3562.0
+offset_top = 57.0
+offset_right = 3767.0
+offset_bottom = 123.0
+scale = Vector2(2, 2)
+text = "Press shift to dash 
+----------------------->"
+
 [connection signal="body_entered" from="Instructor/FirstOne/DialogueIndex1" to="Instructor/FirstOne/DialogueIndex1" method="_on_body_entered"]
+[connection signal="body_entered" from="Instructor/SecondOne/DialogueIndex2" to="Instructor/SecondOne/DialogueIndex2" method="_on_body_entered"]
+[connection signal="body_entered" from="Instructor/ThirdOne/DialogueIndex3" to="Instructor/ThirdOne/DialogueIndex3" method="_on_body_entered"]
+[connection signal="body_entered" from="Instructor/FourthOne/DialogueIndex4" to="Instructor/FourthOne/DialogueIndex4" method="_on_body_entered"]
+[connection signal="body_entered" from="Instructor/FiftheOne/DialogueIndex5" to="Instructor/FiftheOne/DialogueIndex5" method="_on_body_entered"]

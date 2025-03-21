@@ -145,6 +145,7 @@ public partial class Player : CharacterBody2D
 	
 	private void JumpMovement(double delta){
 		
+		
 		if (IsOnFloor() ){
 			CanWallJump = true;
 			LastWallX = -123;
@@ -153,6 +154,7 @@ public partial class Player : CharacterBody2D
 		
 		
 		Vector2 _velocity = Velocity;
+		
 
 		//Wall Sliding
 
@@ -171,6 +173,8 @@ public partial class Player : CharacterBody2D
 				//Wall Slide gravity
 				//_velocity.Y += (WallSlideGravity * (float)delta);
 			//_velocity.Y = Mathf.Min(_velocity.Y, WallSlideGravity);
+			
+			PlayerAnim.Play("WallSlide");
 			if (_velocity.Y >0){_velocity.Y =0;} 
 			this.Position += new Vector2(0,8);
 

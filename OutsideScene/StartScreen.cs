@@ -22,5 +22,9 @@ public partial class StartScreen : CanvasLayer
 	private void OnSettingsPressed(){
 		GetTree().ChangeSceneToFile("res://OutsideScene/settings.tscn");
 	}
+	
+	private void _on_change_scene_button_down(){
+		GetTree().ChangeSceneToFile("res://OutsideScene/ChangeSceneSettings.tscn");
+	}
 
 }

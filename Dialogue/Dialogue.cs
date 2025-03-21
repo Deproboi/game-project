@@ -47,8 +47,6 @@ public partial class Dialogue : CanvasLayer
 	public static void LoadDialogue(string filepath)
 {
 	
-	GD.Print(npcID);
-	GD.Print("is printed?");
 	// Read the JSON file
 	string jsonString = System.IO.File.ReadAllText(filepath);
 

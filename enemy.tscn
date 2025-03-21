@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bos5vsxrwsp0i"]
+
+[ext_resource type="Script" path="res://Enemy.cs" id="1_dexvr"]
+[ext_resource type="Texture2D" uid="uid://brnobljno2csa" path="res://addons/GuardSpear.webp" id="1_tadaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g60jb"]
+size = Vector2(626, 302.563)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw14y"]
+size = Vector2(297, 297)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtypv"]
+size = Vector2(371, 297)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_dexvr")
+
+[node name="Aggro_Range" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro_Range"]
+position = Vector2(3, 0.28125)
+shape = SubResource("RectangleShape2D_g60jb")
+
+[node name="enemyTextire" type="Sprite2D" parent="."]
+texture = ExtResource("1_tadaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 1.5)
+shape = SubResource("RectangleShape2D_iw14y")
+
+[node name="Atk_Timer" type="Timer" parent="."]
+
+[node name="Atk_Reach" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Atk_Reach"]
+position = Vector2(-3, -1)
+shape = SubResource("RectangleShape2D_rtypv")
+debug_color = Color(0.977075, 0, 0.406945, 0.42)
+
+[connection signal="body_entered" from="Aggro_Range" to="." method="playerEntered"]
+[connection signal="body_exited" from="Aggro_Range" to="." method="playerExited"]
+[connection signal="timeout" from="Atk_Timer" to="." method="OnAtkTimeout"]
+[connection signal="body_entered" from="Atk_Reach" to="." method="withinAtkRange"]
+[connection signal="body_exited" from="Atk_Reach" to="." method="atkFinished"]

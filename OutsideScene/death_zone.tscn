@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gtaf4fnr4c3h"]
+
+[ext_resource type="Script" path="res://OutsideScene/DeathZone.cs" id="1_0crpr"]
+
+[node name="DeathZone" type="Area2D"]
+script = ExtResource("1_0crpr")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

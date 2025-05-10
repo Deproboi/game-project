@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjv43iug281hk"]
+
+[ext_resource type="Script" path="res://OutsideScene/Settings.cs" id="1_mgy6x"]
+
+[node name="Settings" type="CanvasLayer"]
+script = ExtResource("1_mgy6x")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 537.0
+offset_top = 236.0
+offset_right = -553.0
+offset_bottom = -389.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings
+"
+
+[node name="MainMenu" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 518.0
+offset_top = 293.0
+offset_right = -538.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 543.0
+offset_top = 374.0
+offset_right = -567.0
+offset_bottom = -243.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game
+"
+
+[connection signal="pressed" from="MainMenu" to="." method="OnMainMenuPressed"]
+[connection signal="pressed" from="Quit" to="." method="OnQuitPressed"]

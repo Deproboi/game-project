@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvg8sbgl4slls"]
+
+[ext_resource type="Script" path="res://InsideScene/Interact.cs" id="1_u0c3o"]
+
+[node name="Interact" type="Area2D"]
+script = ExtResource("1_u0c3o")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="." to="." method="OnBodyExited"]

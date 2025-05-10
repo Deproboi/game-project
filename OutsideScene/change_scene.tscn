@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4jcvy6ydc74v"]
+
+[ext_resource type="Script" path="res://OutsideScene/ChangeScene.cs" id="1_io2de"]
+
+[node name="ChangeScene" type="Area2D"]
+script = ExtResource("1_io2de")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

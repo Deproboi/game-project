@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://5exaoec8r33b"]
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_0k5jr"]
+
+[node name="DeathAnim" type="AnimationTree"]
+tree_root = SubResource("AnimationRootNode_0k5jr")

@@ -3,7 +3,8 @@ using System;
 
 public partial class Interact : Area2D
 {
-
+	
+	
 	private bool CanDialogue = false;
 	
 	private Label interactText;
@@ -23,6 +24,7 @@ public partial class Interact : Area2D
 	
 	private void OnBodyExited(Node body){
 		interactText.Visible = false;
+		CanDialogue = false;
 	}
 	
 	public override void _Process(double delta){

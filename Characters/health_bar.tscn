@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb02koc34mipj"]
+
+[ext_resource type="Script" path="res://Characters/HealthBar.cs" id="1_gyi37"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_we05o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la5jg"]
+bg_color = Color(0.326291, 0.683893, 0.495712, 1)
+
+[node name="HealthBar" type="ProgressBar"]
+z_index = 1
+offset_right = 240.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_we05o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_la5jg")
+value = 60.0
+show_percentage = false
+script = ExtResource("1_gyi37")
+
+[node name="CatchUp" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="timeout" from="CatchUp" to="." method="CatchUpTimeout"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkmd6hug6x588"]
+
+[ext_resource type="Script" path="res://OutsideScene/Store.cs" id="1_17ynh"]
+
+[node name="Store" type="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.995
+anchor_bottom = 0.994
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.75989
+offset_bottom = -0.112
+color = Color(1, 1, 1, 0.239216)
+script = ExtResource("1_17ynh")
+
+[node name="Sword" type="Button" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 68.0
+offset_right = 108.0
+offset_bottom = 132.0
+text = "Sword"
+
+[node name="SwordLabel" type="Label" parent="Sword"]
+visible = false
+layout_mode = 0
+offset_left = 721.0
+offset_top = -18.0
+offset_right = 1072.0
+offset_bottom = 222.0
+text = "This is Sword and it does so much damage, you should very much buy this weapon"
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="Sword" to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="Sword" to="." method="OnMouseExited"]

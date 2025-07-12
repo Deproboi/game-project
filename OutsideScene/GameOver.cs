@@ -9,11 +9,17 @@ public partial class GameOver : CanvasLayer
 	{
 	}
 
-	public override void _PhysicsProcess(double delta){
+
+	public override void _PhysicsProcess(double delta)
+	{
 		if (Input.IsActionJustReleased("respawn")){
 			GetTree().ChangeSceneToFile("res://InsideScene/main.tscn");
 		}
 	}
 	
+	/*private void OnMainMenuPressed()
+	{
+		GetTree().Quit();
+	}*/
 	
 }

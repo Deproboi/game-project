@@ -6,7 +6,7 @@ using Godot.Collections;
 
 public partial class Dialogue : CanvasLayer
 {
-	
+	public static string npcID;
 	
 	private static Label text;
 	private static Label _name;
@@ -21,7 +21,7 @@ public partial class Dialogue : CanvasLayer
 	
 	public static bool IsDialogueActive = false;
 	
-	public static string npcID;
+	//public string npcID;
 
 	private static string TheName;
 	
@@ -118,7 +118,7 @@ public partial class Dialogue : CanvasLayer
 		typingTimer.Start();
 	}
 	
-	private void OnTypingTimeout(){
+	private static void OnTypingTimeout(){
 		if (charIndex < currentLine.Length){
 			text.Text += currentLine[charIndex];
 			charIndex++;

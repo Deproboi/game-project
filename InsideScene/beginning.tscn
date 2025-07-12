@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ckqqwayoqcixw" path="res://Pictures/IMG_0036.png" id="5_16umd"]
 [ext_resource type="Texture2D" uid="uid://sx4535g48ro0" path="res://Pictures/IMG_0030.png" id="5_dvj4x"]
 [ext_resource type="Texture2D" uid="uid://hkr4ywd0fdj6" path="res://Pictures/3c776b10a694ca1e7e4c1a77b39cb4dd.png" id="7_fllw5"]
-[ext_resource type="PackedScene" uid="uid://cvg8sbgl4slls" path="res://InsideScene/interact.tscn" id="8_4uom2"]
+[ext_resource type="PackedScene" uid="uid://bc028o1kavvgg" path="res://InsideScene/interact.tscn" id="8_4uom2"]
 [ext_resource type="Script" path="res://Dialogue/CharDialogue1.cs" id="9_aiefo"]
 [ext_resource type="PackedScene" uid="uid://by2jb36wuamm8" path="res://Dialogue/Dialogue.tscn" id="10_tt7vv"]
 [ext_resource type="Texture2D" uid="uid://3xegw6mcw1ak" path="res://Pictures/pixel-art-chinese-girl-in-red-dress-character-2-png.webp" id="11_dehp4"]

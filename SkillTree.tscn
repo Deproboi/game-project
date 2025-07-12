@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://c85fxmojt1ply"]
+
+[ext_resource type="Texture2D" uid="uid://blpo36ws84q5i" path="res://Pictures/icon.svg" id="1_3uoxv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bmlyj"]
+radius = 338.013
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mnngq"]
+a = Vector2(-88, 72)
+b = Vector2(-88, 440)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_41vno"]
+b = Vector2(-344, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5m606"]
+b = Vector2(336, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ad5gr"]
+b = Vector2(0, -344)
+
+[node name="Node" type="Node"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 797.0
+offset_top = 307.0
+offset_right = 933.0
+offset_bottom = 443.0
+scale = Vector2(0.4, 0.4)
+icon = ExtResource("1_3uoxv")
+
+[node name="Button2" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_3uoxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(824, 336)
+shape = SubResource("CircleShape2D_bmlyj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(912, 264)
+shape = SubResource("SegmentShape2D_mnngq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D2"]
+position = Vector2(-88, 72)
+shape = SubResource("SegmentShape2D_41vno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D2/CollisionShape2D"]
+shape = SubResource("SegmentShape2D_5m606")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D2/CollisionShape2D/CollisionShape2D"]
+shape = SubResource("SegmentShape2D_ad5gr")

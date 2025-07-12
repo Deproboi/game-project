@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://blpo36ws84q5i" path="res://Pictures/icon.svg" id="2_tbtqk"]
 [ext_resource type="Texture2D" uid="uid://c1wxdji6ffoin" path="res://Pictures/ForestBackground1.png" id="3_6tu0p"]
 [ext_resource type="Texture2D" uid="uid://dhi2a3wml67x6" path="res://Pictures/Screenshot 2025-01-21 1.54.51 PM.png" id="4_qrqfk"]
-[ext_resource type="PackedScene" path="res://OutsideScene/death_zone.tscn" id="5_eklna"]
-[ext_resource type="PackedScene" path="res://OutsideScene/change_scene.tscn" id="6_44o0a"]
+[ext_resource type="PackedScene" uid="uid://gtaf4fnr4c3h" path="res://OutsideScene/death_zone.tscn" id="5_eklna"]
+[ext_resource type="PackedScene" uid="uid://c4jcvy6ydc74v" path="res://OutsideScene/change_scene.tscn" id="6_44o0a"]
 [ext_resource type="PackedScene" uid="uid://cvg8sbgl4slls" path="res://InsideScene/interact.tscn" id="7_a6nc1"]
 [ext_resource type="PackedScene" uid="uid://by2jb36wuamm8" path="res://Dialogue/Dialogue.tscn" id="8_wp5u0"]
 
